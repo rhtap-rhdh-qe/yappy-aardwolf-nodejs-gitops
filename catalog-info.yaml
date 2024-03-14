@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: yappy-aardwolf-nodejs-gitops
+  description: This is GitOps manifest for yappy-aardwolf-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: yappy-aardwolf-nodejs
+    janus-idp.io/tekton: yappy-aardwolf-nodejs 
+    backstage.io/kubernetes-id: yappy-aardwolf-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:yappy-aardwolf-nodejs

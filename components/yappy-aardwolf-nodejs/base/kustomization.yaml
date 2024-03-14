@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:         
+  argocd/app-name: yappy-aardwolf-nodejs
+  janus-idp.io/tekton: yappy-aardwolf-nodejs
+  backstage.io/kubernetes-id: yappy-aardwolf-nodejs
+  backstage.io/kubernetes-namespace: rhtap-e2e-ci 
+  app.kubernetes.io/part-of: yappy-aardwolf-nodejs
+resources: 
+- deployment.yaml
+- route.yaml
+- service.yaml
